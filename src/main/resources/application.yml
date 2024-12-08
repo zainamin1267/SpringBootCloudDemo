@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: ${DB_PASSWORD}
+        url: jdbc:h2:mem:testdb
+        username: ${DB_USERNAME}
+    h2:
+        console:
+            enabled: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health, info
+    endpoint:
+        health:
+            show-details: always

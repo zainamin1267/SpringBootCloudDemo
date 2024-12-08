@@ -1,0 +1,29 @@
+replicaCount: 2
+deploymentName: demo-app-deployment
+serviceName: demo-app-service
+configureInitContainer: true
+
+image:
+  repository: zainamin22/demo-app
+  tag: latest
+
+service:
+  type: NodePort
+  port: 8080
+  externalPort: 30080
+
+probes:
+  readiness:
+    path: /actuator/health/readiness
+    port: 8080
+    initialDelaySeconds: 5
+    periodSeconds: 5
+  liveness:
+    path: /api/products
+    port: 8080
+    initialDelaySeconds: 15
+    periodSeconds: 10
+
+db:
+  username: sa
+  password: password

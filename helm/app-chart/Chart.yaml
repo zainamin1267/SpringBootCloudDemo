@@ -1,0 +1,4 @@
+apiVersion: v2
+name: demo-app
+description: A Helm chart for Spring Boot Application
+version: 1.0.0
