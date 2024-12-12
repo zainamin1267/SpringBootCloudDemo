@@ -1,7 +1,5 @@
 API Path: http://localhost:30080/api/products
 
-DB Path: http://localhost:30080/console
-
 docker build -t demo-app:latest ./
 
 docker image ls | grep 'demo-app'
