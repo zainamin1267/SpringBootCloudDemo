@@ -13,3 +13,5 @@ docker push zainamin22/demo-app:latest
 helm template demo-app ./helm/app-chart > output.yaml
 
 helm install demo-app -n dev ./helm/app-chart
+
+kubectl exec -it <podname> -- sh
